@@ -37,7 +37,7 @@ router.post('/bookroom', function(req, res, next) {
 					}
 				});
 				if (!targetRowIndex) {
-					throw 'Specified date not found';
+					res.status(404).send('Cannot find specified date');
 				}
 				step(null, targetRowIndex);
 			});
@@ -45,15 +45,21 @@ router.post('/bookroom', function(req, res, next) {
 		function getCell(targetRowIndex, step) {
 			sheet.getCells({
 				'min-row': targetRowIndex + 2,
-				'max-row': targetRowIndex + 2
+				'max-row': targetRowIndex + 2,
+				'return-empty': true
 			}, function(err, cells) {
-				console.log(cells);
-				step(null, cells[parseInt(req.body.time) + 1]);
+				var cell = cells[parseInt(req.body.time) + 1];
+				if (cell.value == '') {
+					cell.value = req.body.name;
+					cell.save(function() {
+						res.sendStatus(201);
+					});
+				} else {
+					res.status(403).send('Specified time slot already taken');
+				}
 			});
 		}
-	], function(err, result) {
-		res.send(result);
-	});
+	]);
 });
 
 module.exports = router;
