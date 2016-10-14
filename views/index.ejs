@@ -17,7 +17,7 @@
 		<form ng-controller='BookingFormCtrl' ng-submit='submit()'>
 			<label>Name:<br><input type='text' ng-model='form.name'></label><br><br>
 
-			<label>Date:<br><input type='date' placeholder='Date' ng-model='form.date'><br><br>
+			<label>Date:<br><input type='date' min='{{today}}' ng-model='form.date'><br><br>
 
 			<label>Time:<br><select ng-model='form.time'>
 				<option value='0'>P3 // 10:40-11:05</option>
