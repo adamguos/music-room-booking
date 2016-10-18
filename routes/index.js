@@ -38,6 +38,7 @@ router.post('/bookroom', function(req, res, next) {
 				});
 				if (!targetRowIndex) {
 					res.status(404).send('Cannot find specified date');
+					return;
 				}
 				step(null, targetRowIndex);
 			});
@@ -54,6 +55,8 @@ router.post('/bookroom', function(req, res, next) {
 					cell.save(function() {
 						res.sendStatus(201);
 					});
+				} else if (cell.value == 'NOT A SCHOOL DAY@!') {
+					res.status(403).send('Specified date is not a school day');
 				} else {
 					res.status(403).send('Specified time slot already taken');
 				}
