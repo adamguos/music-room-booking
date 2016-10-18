@@ -11,7 +11,10 @@
   </head>
 
   <body ng-app='musicRoomBooking'>
-    <form ng-controller='BookingFormCtrl' ng-submit='submit()'>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+		<form ng-controller='BookingFormCtrl' ng-submit='submit()'>
 			<label>Name:<br><input type='text' ng-model='form.name'></label><br><br>
 
 			<label>Date:<br><input type='date' min='{{today}}' max='{{twoWeeks}}' ng-model='form.date'><br><br>
