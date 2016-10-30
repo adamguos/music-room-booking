@@ -33,16 +33,16 @@ angular.module('musicRoomBooking')
 		$scope.submit = function() {
 			$scope.message = '';
 
+			if (!$scope.form.name || !$scope.form.date || !$scope.form.time || !$scope.form.room) {
+				$scope.message = 'Please fill in all the fields!';
+				return;
+			};
+
 			var form = {
 				name: $scope.form.name,
 				date: $scope.form.date.valueOf(),
 				time: $scope.form.time,
 				room: $scope.form.room
-			};
-
-			if (!form.name || !form.date || !form.time || !form.room) {
-				$scope.message = 'Please fill in all the fields!';
-				return;
 			};
 
 			bookingFormFactory.post(form, function(data, err) {
