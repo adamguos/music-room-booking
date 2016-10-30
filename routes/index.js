@@ -18,7 +18,6 @@ router.post('/bookroom', function(req, res, next) {
 			var creds;
 
 			if (process.env.NODE_ENV == 'production') {
-				console.log(process.env.GS_PRK);
 				creds = {
 					client_email: process.env.GS_CLIENT_EMAIL,
 					private_key: process.env.GS_PRK
