@@ -15,17 +15,21 @@ router.get('/', function(req, res, next) {
 router.post('/bookroom', function(req, res, next) {
 	async.waterfall([
 		function setAuth(step) {
-			// var creds = require('../Music Room Booking-ec46df38383a.json');
+			console.log('client email');
+			console.log(process.env.GS_CLIENT_EMAIL);
 
-			console.log('Node env');
-			console.log(process.env.NODE_ENV);
+			var creds;
 
-			var creds_json = {
-				client_email: process.env.GS_CLIENT_EMAIL,
-				private_key: process.env.GS_PRK
-			};
+			if (process.env.NODE_ENV == 'production') {
+				creds = {
+					client_email: process.env.GS_CLIENT_EMAIL,
+					private_key: process.env.GS_PRK
+				};
+			} else {
+				creds = require('../Music Room Booking-ec46df38383a.json');
+			}
 
-			doc.useServiceAccountAuth(creds_json, step);
+			doc.useServiceAccountAuth(creds, step);
 		},
 		function getInfoAndWorksheets(step) {
 			doc.getInfo(function(err, info) {
