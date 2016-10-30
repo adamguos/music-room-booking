@@ -1,8 +1,26 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+	background: url("../images/background-image.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 a {
   color: #00B7FF;
+}
+
+#booking-form-container {
+	background: #941103;
+	padding: 25px;
+	border-radius: 30px;
+}
+
+#booking-form {
+	background: #FFFFFF;
+	padding: 50px;
+	border-radius: 30px;
 }
