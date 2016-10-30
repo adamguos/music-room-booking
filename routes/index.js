@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 router.post('/bookroom', function(req, res, next) {
 	async.waterfall([
 		function setAuth(step) {
-			var creds = require('../Music Room Booking-ec46df38383a.json');
+			// var creds = require('../Music Room Booking-ec46df38383a.json');
 
 			console.log('Node env');
 			console.log(process.env.NODE_ENV);
