@@ -17,7 +17,15 @@ router.post('/bookroom', function(req, res, next) {
 		function setAuth(step) {
 			var creds = require('../Music Room Booking-ec46df38383a.json');
 
-			doc.useServiceAccountAuth(creds, step);
+			console.log('Node env');
+			console.log(process.env.NODE_ENV);
+
+			var creds_json = {
+				client_email: process.env.GS_CLIENT_EMAIL,
+				private_key: process.env.GS_PRK
+			};
+
+			doc.useServiceAccountAuth(creds_json, step);
 		},
 		function getInfoAndWorksheets(step) {
 			doc.getInfo(function(err, info) {
