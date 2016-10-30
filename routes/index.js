@@ -15,9 +15,6 @@ router.get('/', function(req, res, next) {
 router.post('/bookroom', function(req, res, next) {
 	async.waterfall([
 		function setAuth(step) {
-			console.log('client email');
-			console.log(process.env.GS_CLIENT_EMAIL);
-
 			var creds;
 
 			if (process.env.NODE_ENV == 'production') {
