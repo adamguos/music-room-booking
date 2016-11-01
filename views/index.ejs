@@ -20,17 +20,19 @@
 
 		<div class='container'>
 
-			<div class='jumbotron text-center'>
-				<h1>CIS Music Room Booking</h1>
+			<div class='jumbotron text-center' id='jumbotron'>
+				<div id='heading-container'>
+					<h1>CIS Music Room Booking</h1>
+				</div>
 			</div>
 
 			<div class='row'>
 
-				<div class='col-sm-6'>
-					<a href='https://docs.google.com/spreadsheets/d/15lIZjkAwgvjxTo01hWJIs87Pc8_HwmTwdC_hZ3hDm_M/edit#gid=0'><img class='img-responsive' src='images/spreadsheet-button.png' alt='Music room booking spreadsheet'></a>
+				<div class='col-sm-6 col-xs-12' id='spreadsheet-button-container'>
+					<a href='https://docs.google.com/spreadsheets/d/15lIZjkAwgvjxTo01hWJIs87Pc8_HwmTwdC_hZ3hDm_M/edit#gid=0' target='_blank'><img class='img-responsive' src='images/spreadsheet-button.png' alt='Music room booking spreadsheet'></a>
 				</div>
 
-				<div class='col-sm-6'>
+				<div class='col-sm-6 col-xs-12'>
 					<div id='booking-form-container'>
 						<div id='booking-form'>
 							<form ng-controller='BookingFormCtrl' ng-submit='submit()'>
@@ -65,5 +67,6 @@
 			</div>
 
 		</div>
+
   </body>
 </html>

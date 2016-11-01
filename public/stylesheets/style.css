@@ -13,10 +13,27 @@ a {
   color: #00B7FF;
 }
 
+#jumbotron {
+	background: #941103;
+	padding: 30px;
+	border-radius: 30px;
+}
+
+#heading-container {
+	background: #FFFFFF;
+	padding: 50px;
+	border-radius: 30px;
+}
+
+#spreadsheet-button-container {
+	margin-top: 15px;
+}
+
 #booking-form-container {
 	background: #941103;
 	padding: 25px;
 	border-radius: 30px;
+	margin-top: 15px;
 }
 
 #booking-form {
