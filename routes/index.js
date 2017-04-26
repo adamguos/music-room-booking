@@ -23,7 +23,7 @@ router.post('/bookroom', function(req, res, next) {
 					private_key: process.env.GS_PRK
 				};
 			} else {
-				creds = require('../Music Room Booking-ec46df38383a.json');
+				creds = require('../credentials.json');
 			}
 
 			doc.useServiceAccountAuth(creds, step);

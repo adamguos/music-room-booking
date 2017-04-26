@@ -20,21 +20,22 @@
 
 		<div class='container'>
 
-			<div class='jumbotron text-center' id='jumbotron'>
+			<!--<div class='jumbotron text-center' id='jumbotron'>
 				<div id='heading-container'>
 					<h1>CIS Music Room Booking</h1>
 				</div>
-			</div>
+			</div>-->
 
 			<div class='row'>
 
-				<div class='col-sm-6 col-xs-12' id='spreadsheet-button-container'>
+				<div class='col-md-6 col-sm-12' id='spreadsheet-button-container'>
 					<a href='https://docs.google.com/spreadsheets/d/15lIZjkAwgvjxTo01hWJIs87Pc8_HwmTwdC_hZ3hDm_M/edit#gid=0' target='_blank'><img class='img-responsive' src='images/spreadsheet-button.png' alt='Music room booking spreadsheet'></a>
 				</div>
 
-				<div class='col-sm-6 col-xs-12'>
-					<div id='booking-form-container'>
-						<div id='booking-form'>
+				<div class='col-md-6 col-sm-12'>
+					<div id='booking-container'>
+						<div id='booking-contents'>
+							<h3>CIS Music Room Booking Form</h3>
 							<form ng-controller='BookingFormCtrl' ng-submit='submit()'>
 								<label>Name:<br><input type='text' ng-model='form.name'></label><br><br>
 
@@ -46,14 +47,12 @@
 									<option value='2'>Lunch // 12:50-1:40</option>
 									<option value='3'>After School // 3:00-4:15</option>
 									<option value='4'>After School // 4:15-5:15</option>
-									<option value='5'>After School // 5:15-6:15</option>
 								</select></label><br><br>
 
 								<label>Room:<br><select ng-model='form.room'>
-									<option value='0'>Room 410B</option>
-									<option value='1'>Room 410C</option>
-									<option value='2'>Room 410F</option>
-									<option value='3'>Room 410G</option>
+									<option value='0'>Room 410A - Band Room</option>
+									<option value='1'>Room 410B - Piano Room</option>
+									<option value='2'>Room 410C - Piano Room</option>
 								</select></label><br><br>
 
 								<input type='submit' value='Submit'>

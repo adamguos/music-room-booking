@@ -45,6 +45,8 @@ angular.module('musicRoomBooking')
 				room: $scope.form.room
 			};
 
+			$scope.message = 'Please wait...';
+
 			bookingFormFactory.post(form, function(data, err) {
 				if (err) {
 					console.log(err);
