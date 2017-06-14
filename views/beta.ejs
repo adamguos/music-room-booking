@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('partials/head-beta') %>
+	</head>
+	
+	<body>
+        <h3>Beta</h3>
+
+        <div id="calendar"></div>
+        
+        <script type="text/javascript">
+            var calendar = $("#calendar").calendar({
+                tmpl_path: "/tmpls/",
+                events_source: function () { return []; }
+            });
+        </script>
+	</body>
+</html>

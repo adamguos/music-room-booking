@@ -1,0 +1,18 @@
+{
+  "name": "music-room-booking",
+  "description": "",
+  "main": "app.js",
+  "license": "MIT",
+  "homepage": "https://github.com/xtqmc/music-room-booking",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-calendar": "^0.2.5"
+  }
+}

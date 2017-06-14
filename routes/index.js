@@ -9,7 +9,11 @@ var sheet;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CIS Music Room Booking' });
+	res.render('index', { title: 'CIS Music Room Booking' });
+});
+
+router.get('/beta', function(req, res, next) {
+	res.render('beta', { title: 'CIS Music Room Booking Form' });
 });
 
 router.post('/bookroom', function(req, res, next) {
