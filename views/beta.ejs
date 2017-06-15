@@ -10,9 +10,19 @@
         <div id="calendar"></div>
         
         <script type="text/javascript">
-            var calendar = $("#calendar").calendar({
-                tmpl_path: "/tmpls/",
-                events_source: function () { return []; }
+            $(document).ready(function() {
+                var calendar = $("#calendar").calendar({
+                    // events_source: [{
+                    //     "id": 293,
+                    //     "title": "Event 1",
+                    //     "url": "http://example.com",
+                    //     "class": "event-important",
+                    //     "start": 1497542400000, // Milliseconds
+                    //     "end": 1497801600000 // Milliseconds
+                    // }]
+                    events_source: '/api/events',
+                    tmpl_path: 'bower_components/bootstrap-calendar/tmpls/'
+                });
             });
         </script>
 	</body>
